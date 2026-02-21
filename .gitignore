@@ -4,7 +4,7 @@
 *.mex*
 
 !M_QAM.slx  
-*.slx.autosave
+*.autosave
 
 
 *.jxb
