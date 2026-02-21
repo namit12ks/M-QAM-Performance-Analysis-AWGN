@@ -9,7 +9,7 @@ The simulation evaluates the fundamental trade-off between spectral efficiency a
 
 ---
 
-##  System Architecture
+##  System Model
 
 The data pipeline mirrors a standard real-world baseband transceiver. 
 
@@ -22,7 +22,7 @@ The data pipeline mirrors a standard real-world baseband transceiver.
 
 ---
 
-##  Visualizing Channel Noise (Constellation Dynamics)
+##  Visualizing Channel Noise ( Signal Constellation )
 
 To visualize the impact of channel noise, the simulation dynamically resizes the constellation boundaries and recalculates ideal mathematical decision points (`qammod`) as the modulation order scales.
 
@@ -32,13 +32,13 @@ To visualize the impact of channel noise, the simulation dynamically resizes the
 
 ---
 
-##  Results: BER vs. SNR Waterfall Curves
+## BER vs. SNR Waterfall Curves
 
 The core performance analysis is captured in the comparative BER waterfall plots extracted directly from the Simulink workspace.
 
 ![BER vs SNR Waterfall Curve](BER_vs_SNR.png)
 
-### Key Engineering Takeaways:
+###  Takeaways:
 1.  **4-QAM (QPSK) - Maximum Robustness:** Achieves a near-zero Bit Error Rate at very low SNR. The massive Euclidean distance between the 4 symbols requires extreme noise to cause a bit error, at the cost of the lowest spectral efficiency (2 bits/symbol).
 2.  **64-QAM - Maximum Throughput:** Triples the data rate (6 bits/symbol) but requires a vastly superior channel. Packing 64 points into the same average signal power drastically shrinks the distance between symbols, making it highly susceptible to minor noise fluctuations.
 3.  **Adaptive Modulation (AMC):** In real-world deployments, the system monitors SNR feedback. It downshifts to 4-QAM in poor signal conditions to prevent dropped packets, and upshifts to 64-QAM in high-SNR conditions to maximize throughput.
@@ -46,6 +46,6 @@ The core performance analysis is captured in the comparative BER waterfall plots
 ---
 
 ##  How to Run
-1.  Clone this repository and open MATLAB.
-2.  Ensure `M_QAM.slx` and `run2.m` are in the active directory.
-3.  Execute `run2` in the MATLAB Command Window.
+1.  Clone this repository and open MATLAB (R2025b or later recommended).
+2.  keep `M_QAM.slx` and `runSimulation.m`  in same directory.
+3.  Execute `runSimulation.m`.
