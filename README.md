@@ -1,6 +1,6 @@
-# MQAM Performance Analysis in AWGN
 
-**Developed for Digital Communications R&D Portfolio (C-DOT)**
+#  M-QAM Performance Analysis in AWGN Channels
+
 
 ##  Project Overview
 This project models, simulates, and analyzes an Adaptive Quadrature Amplitude Modulation (M-QAM) digital communication system using **MATLAB R2025b** and **Simulink**. 
