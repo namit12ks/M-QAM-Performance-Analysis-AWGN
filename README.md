@@ -12,9 +12,9 @@ The core objective is to evaluate the trade-offs between spectral efficiency (da
 ##  System Architecture
 
 The data pipeline was constructed in Simulink to accurately mirror a real-world baseband transceiver. 
-
+* Baseband Transceiver Architecture engineered in Simulink.*
 ![Simulink Architecture](Simulink_Model.png)
-*Caption: Baseband Transceiver Architecture engineered in Simulink.*
+
 
 ### Key Components:
 * **Transmitter:** A Random Integer Generator creates the data source, strictly converted into a binary stream via an `Integer to Bit Converter` before being mapped by a Rectangular QAM Modulator. 
@@ -26,7 +26,7 @@ The data pipeline was constructed in Simulink to accurately mirror a real-world 
 
 ##  Algorithmic Control & Simulation Logic
 
-A custom MATLAB script (`run2.m`) acts as the "intelligent" controller for the Simulink model, executing a nested-loop simulation with several specific engineering optimizations:
+A custom MATLAB script (`runSimulation.m`) acts as the "intelligent" controller for the Simulink model, executing a nested-loop simulation with several specific engineering optimizations:
 
 1. **Automated Variance Math:** The script mathematically translates the target SNR (sweeping from 0 dB to 60 dB) into an absolute noise variance value based on the specific average signal power of the current M-QAM scheme.
 2. **Dynamic Constellation Scaling:** As the loop shifts the modulation order $M$, the script automatically recalculates the spatial boundaries and ideal mathematical reference points (`qammod`), ensuring the visualization scales perfectly.
@@ -38,8 +38,8 @@ A custom MATLAB script (`run2.m`) acts as the "intelligent" controller for the S
 
 To truly understand the impact of channel noise, the project includes a real-time visualization of the Constellation Diagram as both the modulation order ($M$) and the Signal-to-Noise Ratio (SNR) increase.
 
+* 64-QAM constellation captured mid-simulation. The yellow dots represent received symbols scattered by AWGN, while the red crosses denote the ideal mathematical decision points.*
 ![64-QAM Constellation](Screenshot%202026-02-21%20at%2011.25.33%20PM.png)
-*Caption: A 64-QAM constellation captured mid-simulation. The yellow dots represent received symbols scattered by AWGN, while the red crosses denote the ideal mathematical decision points.*
 
 **[🎥 Watch the full Constellation SNR Sweep Video Here](link_to_your_video.mp4)**
 
@@ -50,9 +50,9 @@ To truly understand the impact of channel noise, the project includes a real-tim
 ##  Results: BER vs. SNR Waterfall Curves
 
 The core performance analysis is captured in the comparative BER waterfall plots. 
-
+*Simulated Bit Error Rate (BER) vs. SNR performance curves for M=4, 16, and 64.*
 ![BER vs SNR Waterfall Curve](BER_vs_SNR.png)
-*Caption: Simulated Bit Error Rate (BER) vs. SNR performance curves for M=4, 16, and 64.*
+
 
 ### Theoretical Analysis & Trade-offs:
 1. **4-QAM (QPSK) - Maximum Robustness:**
@@ -68,5 +68,5 @@ The core performance analysis is captured in the comparative BER waterfall plots
 ## How to Run Locally
 1. Clone this repository and open MATLAB (R2025b or later recommended).
 2. Ensure both `M_QAM.slx` and `runSimulation.m` are in the same active directory.
-3. Type `run2` in the MATLAB Command Window to execute the simulation. 
+3. Type `runSimulation` in the MATLAB Command Window to execute the simulation. 
 4. The waterfall curve will generate automatically upon completion.
