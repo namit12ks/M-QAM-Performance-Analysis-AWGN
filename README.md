@@ -18,13 +18,11 @@ The data pipeline mirrors a standard real-world baseband transceiver.
 * **Transmitter:** Random integer generation, bit-conversion, and Rectangular M-QAM baseband modulation.
 * **Channel:** Additive White Gaussian Noise (AWGN), with variance dynamically controlled by a MATLAB control script to simulate SNR sweeps (0 dB to 60 dB).
 * **Receiver:** Hard-decision demodulation, integer-conversion, and dual Error Rate Calculation (BER & SER).
-* **Compiler Optimization:** Simulink blocks are forced into `Interpreted execution` to ensure cross-platform stability and bypass standard C-MEX compiler limitations.
+
 
 ---
 
 ##  Visualizing Channel Noise ( Signal Constellation )
-
-To visualize the impact of channel noise, the simulation dynamically resizes the constellation boundaries and recalculates ideal mathematical decision points (`qammod`) as the modulation order scales.
 
 **[ Watch the Constellation & SNR Sweep Simulation](Constellation_M-QAM.mov)**
 
@@ -48,4 +46,4 @@ The core performance analysis is captured in the comparative BER waterfall plots
 ##  How to Run
 1.  Clone this repository and open MATLAB (R2025b or later recommended).
 2.  keep `M_QAM.slx` and `runSimulation.m`  in same directory.
-3.  Execute `runSimulation.m`.
+3.  Execute `runSimulation.m` in Matlab.
