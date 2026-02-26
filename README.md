@@ -39,12 +39,10 @@ The core performance analysis is captured in the comparative BER waterfall plots
 ###  Takeaways:
 1.  **4-QAM (QPSK) - Maximum Robustness:** Achieves a near-zero Bit Error Rate at very low SNR. The massive Euclidean distance between the 4 symbols requires extreme noise to cause a bit error, at the cost of the lowest spectral efficiency (2 bits/symbol).
 2.  **64-QAM - Maximum Throughput:** Triples the data rate (6 bits/symbol) but requires a vastly superior channel. Packing 64 points into the same average signal power drastically shrinks the distance between symbols, making it highly susceptible to minor noise fluctuations.
-3. **Adaptive Modulation and Coding (AMC):** In real-world deployments, the system monitors SNR feedback. It downshifts to 4-QAM in poor signal conditions to prevent dropped packets, and upshifts to 64-QAM in high-SNR conditions to maximize throughput.
 
 ### REAL-WORLD CHALLENGE: MULTIPATH PROPAGATION AND NEED FOR ADAPTIVE MODULATION AND CODING (AMC):
 
 In a practical wireless environment :-
-
  1. Due to multipath propagation, the transmitted signal undergoes severe amplitude attenuation and phase shifts, causing deep, unpredictable channel fades **Rayleigh Fading Channel**. 
 2.Due to  MOBILITY of USER Wireless and multipath propagation, communication channels experience unpredictable fluctuations in Signal-to-Noise Ratio (SNR). 
 
@@ -53,7 +51,6 @@ To maintain a reliable link in this environment,a two-step approach at the recei
 2. **Adaptive Modulation and Coding (AMC):** Even after equalization, the effective Signal-to-Noise Ratio (SNR) fluctuates wildly as the user moves. AMC dynamically reacts to this changing SNR feedback. It downshifts to a robust scheme like 4-QAM during deep fades to prevent dropped packets, and upshifts to a dense scheme like 64-QAM during high-SNR peaks to maximize spectral efficiency and throughput.
 
  **Related Implementation:** 
- 
  To see this  Rayleigh channel modeling and dynamic modulation switching—check out my recent simulation:
  
 [**QAM Adaptive Modulation and Coding (AMC) over Rayleigh Fading**](https://github.com/namit12ks/QAM-AMC-over-Rayleigh-Fading)
