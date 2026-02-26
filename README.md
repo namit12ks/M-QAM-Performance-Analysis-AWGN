@@ -3,7 +3,7 @@
 
 
 ##  Project Overview
-This project models, simulates, and analyzes an Adaptive Quadrature Amplitude Modulation (M-QAM) digital communication system using **MATLAB R2025b** and **Simulink**. 
+This project models, simulates, and analyzes an M Quadrature Amplitude Modulation (M-QAM) digital communication system using **MATLAB R2025b** and **Simulink**. 
 
 The simulation evaluates the fundamental trade-off between spectral efficiency and Bit Error Rate (BER) across varying Signal-to-Noise Ratios (SNR). By programmatically switching between **4-QAM (QPSK), 16-QAM, and 64-QAM**, it demonstrates how modern telecommunication networks adapt to fluctuating channel conditions to maintain reliable data links.
 
