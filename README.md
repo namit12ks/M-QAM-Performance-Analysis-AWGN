@@ -52,11 +52,17 @@ To maintain a reliable link in this environment,a two-step approach at the recei
 1. **Channel Equalization:** Before demodulation can occur, the receiver must estimate the Channel State Information (CSI). By applying an equalizer (such as Zero-Forcing or MMSE), the system mathematically reverses the phase and amplitude distortions introduced by the Rayleigh channel, restoring the constellation points to their proper quadrants.
 2. **Adaptive Modulation and Coding (AMC):** Even after equalization, the effective Signal-to-Noise Ratio (SNR) fluctuates wildly as the user moves. AMC dynamically reacts to this changing SNR feedback. It downshifts to a robust scheme like 4-QAM during deep fades to prevent dropped packets, and upshifts to a dense scheme like 64-QAM during high-SNR peaks to maximize spectral efficiency and throughput.
 
- **Related Implementation:** To see this entire pipeline in action—including Rayleigh channel modeling and dynamic modulation switching—check out my recent simulation:
-[**Adaptive M-QAM Performance over Equalized Rayleigh Fading Channels**]([https://github.com/namit12ks/QAM-AMC-over-Rayleigh-Fading]
+ **Related Implementation:** 
+ To see this  Rayleigh channel modeling and dynamic modulation switching—check out my recent simulation:
+[**QAM Adaptive Modulation and Coding (AMC) over Rayleigh Fading**](https://github.com/namit12ks/QAM-AMC-over-Rayleigh-Fading)
 ---
 
 ##  How to Run
 1.  Clone this repository and open MATLAB (R2025b or later recommended).
 2.  keep `M_QAM.slx` and `runSimulation.m`  in same directory.
 3.  Execute `runSimulation.m` in Matlab.
+
+## By
+**Namit Kumar Sahu** : 230102059  
+B.Tech in Electronics and Communication Engineering  
+Indian Institute of Technology Guwahati (IITG)
