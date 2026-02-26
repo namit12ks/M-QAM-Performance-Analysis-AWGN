@@ -3,9 +3,10 @@
 
 
 ##  Project Overview
-This project models, simulates, and analyzes an M-Tuple Quadrature Amplitude Modulation (M-QAM) digital communication system using **MATLAB R2025b** and **Simulink**. 
 
-The simulation evaluates the fundamental trade-off between spectral efficiency and Bit Error Rate (BER) across varying Signal-to-Noise Ratios (SNR). By programmatically switching between **4-QAM (QPSK), 16-QAM, and 64-QAM**, it demonstrates how modern telecommunication networks need to adapt to fluctuating channel conditions to maintain reliable data links.
+This repository contains a comprehensive simulation and analysis of M-ary Quadrature Amplitude Modulation (M-QAM) schemes—specifically 4-QAM, 16-QAM, and 64-QAM—transmitted over an Additive White Gaussian Noise (AWGN) channel. Built using MATLAB and Simulink, the project demonstrates core digital communication principles by evaluating how different modulation orders respond to varying levels of channel noise.
+
+The simulation evaluates the fundamental trade-off between spectral efficiency and Bit Error Rate (BER) across varying Signal-to-Noise Ratios (SNR).
 
 ---
 
