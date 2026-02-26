@@ -53,7 +53,9 @@ To maintain a reliable link in this environment,a two-step approach at the recei
 2. **Adaptive Modulation and Coding (AMC):** Even after equalization, the effective Signal-to-Noise Ratio (SNR) fluctuates wildly as the user moves. AMC dynamically reacts to this changing SNR feedback. It downshifts to a robust scheme like 4-QAM during deep fades to prevent dropped packets, and upshifts to a dense scheme like 64-QAM during high-SNR peaks to maximize spectral efficiency and throughput.
 
  **Related Implementation:** 
+ 
  To see this  Rayleigh channel modeling and dynamic modulation switching—check out my recent simulation:
+ 
 [**QAM Adaptive Modulation and Coding (AMC) over Rayleigh Fading**](https://github.com/namit12ks/QAM-AMC-over-Rayleigh-Fading)
 ---
 
