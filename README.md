@@ -24,7 +24,7 @@ The data pipeline mirrors a standard real-world baseband transceiver.
 
 ##  Visualizing Channel Noise ( Signal Constellation )
 
-**[ Watch the Constellation & SNR Sweep Simulation](Gif_contellation_.mp4)**
+**[ Watch the Constellation & SNR Sweep Simulation](Gif_.mp4)**
 
 * **The SNR Effect:** As the simulation sweeps from low to high SNR, the heavily dispersed signal clouds rapidly condense into tight, distinct clusters around the ideal reference crosses, drastically reducing the probability of decision errors.
 
