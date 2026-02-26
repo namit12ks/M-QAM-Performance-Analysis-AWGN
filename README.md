@@ -39,8 +39,16 @@ The core performance analysis is captured in the comparative BER waterfall plots
 ###  Takeaways:
 1.  **4-QAM (QPSK) - Maximum Robustness:** Achieves a near-zero Bit Error Rate at very low SNR. The massive Euclidean distance between the 4 symbols requires extreme noise to cause a bit error, at the cost of the lowest spectral efficiency (2 bits/symbol).
 2.  **64-QAM - Maximum Throughput:** Triples the data rate (6 bits/symbol) but requires a vastly superior channel. Packing 64 points into the same average signal power drastically shrinks the distance between symbols, making it highly susceptible to minor noise fluctuations.
-3.  **Adaptive Modulation (AMC):** In real-world deployments, the system monitors SNR feedback. It downshifts to 4-QAM in poor signal conditions to prevent dropped packets, and upshifts to 64-QAM in high-SNR conditions to maximize throughput.
+3. **Adaptive Modulation (AMC):** In real-world deployments, the system monitors SNR feedback. It downshifts to 4-QAM in poor signal conditions to prevent dropped packets, and upshifts to 64-QAM in high-SNR conditions to maximize throughput.
 
+### NEED FOR ADAPTIVE MODULATION AND CODING (AMC):
+Wireless communication channels (like Rayleigh fading environments) experience constant, unpredictable fluctuations in Signal-to-Noise Ratio (SNR) due to multipath propagation and mobility. 
+
+* **The Problem with Fixed Modulation:** A static modulation scheme forces a compromise. If the system is locked into 64-QAM, deep channel fades will cause massive data loss and spike the Bit Error Rate (BER). Conversely, if it is locked into 4-QAM, it sacrifices valuable spectral efficiency when the channel is clear.
+* **The AMC Solution:** To solve this, the transmitter continuously monitors SNR feedback from the receiver. It dynamically adapts the modulation order—downshifting to robust schemes (like 4-QAM) during poor signal conditions to prevent dropped packets, and upshifting to dense schemes (like 64-QAM) during high-SNR periods to maximize throughput.
+
+🔗 **Related Implementation:** To see this dynamic switching in action, check out my recent project simulating this exact behavior:
+[**Adaptive M-QAM Performance over Rayleigh Fading Channels**](INSERT_YOUR_GITHUB_LINK_HERE)
 ---
 
 ##  How to Run
